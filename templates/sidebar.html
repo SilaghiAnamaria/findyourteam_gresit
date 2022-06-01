@@ -1,0 +1,97 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+<header class='header-fixed'>
+    <div class="container">
+        <a class="logo animated fadeInLeft" href="#">Find your Team</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="{% url 'home' %}">Home</a>
+                </li>
+                {#                {%  if request.user.is_authenticated and request.user,is_superuser %}#}
+{#                {% if request.user.is_authenticated %}#}
+                    <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                       data-bs-toggle="dropdown" aria-expanded="false">
+
+                        Jucatori
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+{#                    {% if perms.jucator.add_jucator %}#}
+                        <li><a class="dropdown-item" href="{% url "creaza_jucator" %}">Adauga un jucator</a></li>
+{#                    {% endif %}#}
+                    <li><a class="dropdown-item" href="{% url "lista_cu_jucatori" %}">Lista de jucatori</a></li>
+{#                {% endif %}#}
+                </ul>
+                </li>
+                {#                  {%  if request.user.is_authenticated and request.user,is_superuser %}#}
+{#                {% if request.user.is_authenticated %}#}
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                           data-bs-toggle="dropdown" aria-expanded="false">
+
+                            Echipe
+
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+{#                            {% if perms.echipa.add_echipa %}#}
+                                <li><a class="dropdown-item" href="{% url 'creaza_echipa' %}">Adauga o echipa</a>
+                                </li>
+{#                            {% endif %}#}
+                            <li><a class="dropdown-item" href="{% url "lista_cu_echipe" %}">Lista cu echipe</a></li>
+
+                        </ul>
+                    </li>
+{#                {% endif %}#}
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                       data-bs-toggle="dropdown" aria-expanded="false">
+
+
+                            Locatii
+
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+{#                            {% if perms.echipa.add_echipa %}#}
+                                <li><a class="dropdown-item" href="{% url 'creaza_locatie' %}">Adauga o locatie</a>
+                                </li>
+{#                            {% endif %}#}
+                          <li><a class="dropdown-item" href="{% url "lista_cu_locatii" %}">Lista cu locatii</a></li>
+
+                        </ul>
+                    </li>
+{#                {% endif %}#}
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                       data-bs-toggle="dropdown" aria-expanded="false">
+
+                            Sporturi
+
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+{#                            {% if perms.echipa.add_echipa %}#}
+                                <li><a class="dropdown-item" href="{% url 'creaza_sport' %}">Adauga sportul dorit</a>
+                                </li>
+{#                            {% endif %}#}
+                        <li><a class="dropdown-item" href="{% url "lista_cu_sporturi" %}">Lista cu sporturi</a></li>
+
+                        </ul>
+                    </li>
+{#                {% endif %}#}
+
+
+            </ul>
+
+{#            {% if request.user.is_authenticated %}#}
+            <a href="{% url 'logout' %}" class="btn btn-success">Iesire din cont, {{ user.username }}</a>
+{#            {% else %}#}
+                <a href="{% url 'creaza_user' %}" class="btn btn-secondary">Creaza cont nou</a>
+                <a href="{% url 'login' %}" class="btn btn-success">Intrare in cont</a>
+{#            {% endif %}#}
+
+        </div>
+    </div>
+</nav>
